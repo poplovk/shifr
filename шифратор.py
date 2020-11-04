@@ -1,6 +1,7 @@
 import os
 import time
 import random
+import webbrowser
 
 # print(type(choose))
 
@@ -13,7 +14,8 @@ while True:
     print("[---           2. Загрузить данные")
     print("[---           3. Что это такое?")
     print("[---           4. Сыграть в Поле Чудес")
-    print("[---           5. Выйти")
+    print("[---           5. Админ Панель")
+    print("[---           6. Выйти")
     choose = int(input("[---  "))
 
     if choose == 1:
@@ -124,6 +126,8 @@ while True:
             print("Возвращаемся в главное меню...")
             time.sleep(3)
     if choose == 5:
+        webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO")
+    if choose == 6:
         print("Завершаем работу...")
         time.sleep(2)
         break

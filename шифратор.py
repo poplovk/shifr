@@ -1,6 +1,7 @@
 import os
 import time
 
+# print(type(choose))
 
 truecode = ["390erjsm9-0d()dm", "123125", "123123"]
 message = ["Сообщение", "Сообщение1", "Сообщение2"]
@@ -8,11 +9,10 @@ while True:
     print("---------------------------Выберите опцию------------------------------------")
     print()
     print("[---           1. Ввести код")
-    print("[---           2. Выйти")
-    print("[---           3. ")
+    print("[---           2. Загрузить данные")
+    print("[---           3. Что это такое?")
+    print("[---           4. Выйти")
     choose = int(input("[---  "))
-    if choose == 2:
-        break  # print(type(choose))
 
     if choose == 1:
         inputcode = input("Введите код дешифровки: ")
@@ -35,7 +35,30 @@ while True:
                 time.sleep(1)
                 print("Done!")
                 time.sleep(1)
+                print()
                 print(message[counter])
+                print()
+                time.sleep(1)
+                print("Возвращаемся в главное меню...")
                 time.sleep(5)
-    break
-
+    if choose == 2:
+        userapp = input("Введите данные, которые вы хотите загрузить: ")
+        usercode = input("Введите код доступа: ")
+        if usercode in truecode:
+            print("Такой код уже используется")
+            usercode = input("Введите код доступа: ")
+        truecode.append(usercode)
+        message.append(userapp)
+        time.sleep(1)
+        print("Готово! Ваш код для просмотра: " + usercode)
+        time.sleep(1)
+    if choose == 3:
+        print("Q: Что-это?")
+        print("A: Своеобразная программа для хранения файлов. Анонимная.")
+        print()
+        print("Q: Как это работает?")
+        print("A: Вы можетете загружать любые данные (кроме файлов напрямую) и присваивать им код, ")
+        print("зная который любой может получить к ним доступ")
+    if choose == 4:
+        print("Завершили работу >_<")
+        break

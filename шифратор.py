@@ -10,7 +10,7 @@ while True:
     print("[---           1. Ввести код")
     print("[---           2. Выйти")
     print("[---           3. ")
-    choose = int(input("[--- "))
+    choose = int(input("[---  "))
     if choose == 2:
         break  # print(type(choose))
 

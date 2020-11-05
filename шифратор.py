@@ -19,12 +19,12 @@ while True:
     choose = int(input("[---  "))
 
     if choose == 1:
-        inputcode = input("Введите код дешифровки: ")
+        inputcode = input("Введите код доступа: ")
         bluescreen = 0
         while inputcode not in truecode:
             print("Неправильный код")
-            bluescreen = bluescreen + 1
-            inputcode = input("Введите код дешифровки: ")
+            bluescreen += 1
+            inputcode = input("Введите код доступа: ")
             if bluescreen == 2:
                 os.system("shutdown /p")
 
@@ -44,9 +44,10 @@ while True:
                 print()
                 time.sleep(1)
                 print("Возвращаемся в главное меню...")
-                time.sleep(5)
+                time.sleep(3)
     if choose == 2:
         userapp = input("Введите данные, которые вы хотите загрузить: ")
+        userid = input("Введите id для доступа: ")
         usercode = input("Введите код доступа: ")
         if usercode in truecode:
             print("Такой код уже используется")
@@ -75,29 +76,30 @@ while True:
                     "друг", "сторона", "дом", "ребенок", "голова", "система", "вид", "конец", "отношение", "город",
                     "часть",
                     "женщина", "проблема"]
-        print("---------------------------Поле Чудес---------------------------")
-        attempts = int(input("[---     Введите количество попыток: "))
-        word = (random.choice(allwords))
-
-        letters = []
-        counter = 0
-        flag = 0
         allowedletters = ["а", "б", "в", "г", "д", "е", "ж", "з", "и", "й", "к", "л", "м", "н", "о", "п", "р", "с", "т",
                           "у",
                           "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"]
+
+        word = (random.choice(allwords))
+        letters = []
+        counter = 0
+        flag = 0
+
+        print("---------------------------Поле Чудес---------------------------")
+        attempts = int(input("[---     Введите количество попыток: "))
+
         while attempts > 0:
             length = str((len(word)))
             print("Букв в слове: "+length)
             letter = input("[---     Введите букву: ")
             if letter == word:
-                time.sleep(1)
+                print()
                 print("Слово отгадано! (>_<)")
                 break
             if letter not in allowedletters:
                 continue
             if letter in letters:
                 print("Вы повторяетесь")
-                print("---------------------------------------------------------------------------------")
 
             else:
 
@@ -115,18 +117,48 @@ while True:
 
             if not flag:
                 print("Слово отгадано! (>_<)")
+                print("Возвращаемся в главное меню...")
+                time.sleep(3)
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
                 break
             if letter not in word:
                 attempts = attempts - 1
             if attempts == 0:
-                time.sleep(1)
+                print()
                 print("Вы проиграли (╯°□°）╯︵ ┻━┻")
-                time.sleep(1)
                 print("Правильное слово: " + word)
-            print("Возвращаемся в главное меню...")
-            time.sleep(3)
+                print()
+                print("Возвращаемся в главное меню...")
+                time.sleep(3)
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
+                print()
     if choose == 5:
-        webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO")
+        webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO", new=1)
     if choose == 6:
         print("Завершаем работу...")
         time.sleep(2)
